@@ -1,0 +1,49 @@
+body {
+    position: relative;
+    width: 95vw;
+    height: 95vh;
+}
+
+.corousel-container {
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 70%;
+    display: inline-flex;
+    overflow: hidden;
+    /* cursor: pointer; */
+
+    /* overflow: hidden; */
+}
+.corousel-container img {
+    /* position: relative; */
+    /* display: inline-block; */
+    width: 100%;
+    transition: transform 1s ease-in-out;
+    /* transition: translate 2s linear; */
+    /* height: 100%; */
+    /* transform: translateX(-100%); */
+}
+
+.corousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.corousel-dots li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: gray;
+    list-style-type: none;
+    margin-left: 20px;
+    display: inline-block;
+    cursor: pointer;
+    /* bottom: 0; */
+}
+.corousel-dots li.active {
+    background-color: white;
+}
