@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+    background-color: lightgray;
+}
+
+.accordion-container {
+    position: relative;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.accordion-container .accordion {
+    position: relative;
+    width: 80%;
+    margin-top: 2rem;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.accordion-container .accordion .accordion-header {
+    cursor: pointer;
+}
+.accordion-container .accordion .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s linear;
+}
+.accordion-container .accordion .accordion-body .section-seperator {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-container .accordion .accordion-body.expanded {
+    max-height: 100%;
+}
+.accordion-body i {
+    position: absolute;
+    right: 14px;
+    top: 6px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: gray;
+}
+.accordion-body i::after {
+    content: "+";
+}
+.accordion-body.expanded i::after {
+    content: "-";
+}
