@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drag and Drop</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <main class="main-container">
+            <section class="create-task">
+                <input type="text" placeholder="Add new task" id="addtaskinput" />
+                <button onclick="handleAddTask()">Add Task</button>
+            </section>
+            <section class="task-list-container">
+                <section class="task-container">
+                    <h2>To Do</h2>
+                    <div class="task-list todo-container"></div>
+                </section>
+                <section class="task-container inprogress-container">
+                    <h2>In Progress</h2>
+                    <div class="task-list"></div>
+                </section>
+                <section class="task-container done-container">
+                    <h2>Done</h2>
+                    <section class="task-list"></section>
+                </section>
+            </section>
+        </main>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
