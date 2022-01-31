@@ -81,8 +81,8 @@ document.getElementsByClassName("corousel-container")[0].addEventListener("mouse
     interval = setInterval(slideLeft(), 5000);
 });
 
-function handleCorouselIndexClick(target) {
-    const id = target.id;
+function handleCorouselIndexClick(event) {
+    const id = event.target.id;
     switch (id) {
         case "first":
             counter = -1;

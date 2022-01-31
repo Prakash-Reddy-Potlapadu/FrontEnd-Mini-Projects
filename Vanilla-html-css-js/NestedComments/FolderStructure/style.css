@@ -1,0 +1,50 @@
+.comment-post-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+}
+.post-button {
+    position: relative;
+    left: 90%;
+}
+.comments-container {
+    /*width: 50%;*/
+    height: 70vh;
+    border: 1px solid black;
+    margin-top: 1rem;
+}
+.comment {
+    border: 1px solid #dfdfdf;
+    padding: 5px;
+    margin: 10px;
+    position: relative;
+}
+
+.comment-action-container {
+    position: absolute;
+    left: 77%;
+    top: 47%;
+}
+.reply,
+.edit,
+.delete-text {
+    color: blue;
+    margin: 0 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.edit-comment-input,
+.reply-comment-input {
+    border: 1px solid #dfdfdf;
+    padding: 8px;
+    margin: 10px;
+    position: absolute;
+    left: -3%;
+    top: -37%;
+    width: 98%;
+}
+.reply-comment-input {
+    top: 78%;
+    position: inherit;
+}
