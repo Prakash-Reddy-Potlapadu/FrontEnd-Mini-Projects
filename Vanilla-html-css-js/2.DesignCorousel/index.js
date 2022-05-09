@@ -1,9 +1,9 @@
-let images, interval, counter;
+let images, interval, imageNumber;
 
 window.addEventListener("load", () => {
     images = document.getElementsByClassName("corousel-image");
-    interval = setInterval(slideLeft(), 5000);
-    counter = 0;
+    interval = setInterval(slideLeft, 5000);
+    imageNumber = 0;
 });
 
 function slideLeft() {
@@ -12,12 +12,12 @@ function slideLeft() {
     const third = document.getElementById("third");
     const fourth = document.getElementById("fourth");
     const fifth = document.getElementById("fifth");
-    return () => {
-        counter++;
+    //return () => {
+        imageNumber++;
         for (let img of images) {
             let translate;
 
-            switch (counter) {
+            switch (imageNumber) {
                 case 1:
                     translate = "translateX(-100%)";
                     second.classList.add("active");
@@ -57,52 +57,52 @@ function slideLeft() {
                     break;
 
                 default:
-                    translate = "translateX(-0%)";
+                    translate = "translateX(0%)";
                     first.classList.add("active");
                     second.classList.remove("active");
                     third.classList.remove("active");
                     fourth.classList.remove("active");
                     fifth.classList.remove("active");
-                    counter = 0;
+                    imageNumber = 0;
                     break;
             }
 
             img.style.transform = translate;
         }
-    };
+    //};
 }
 
-function slideRight() {}
+//function slideRight() {}
 
 document.getElementsByClassName("corousel-container")[0].addEventListener("mouseenter", () => {
     clearInterval(interval);
 });
 document.getElementsByClassName("corousel-container")[0].addEventListener("mouseleave", () => {
-    interval = setInterval(slideLeft(), 5000);
+    interval = setInterval(slideLeft, 5000);
 });
 
 function handleCorouselIndexClick(event) {
     const id = event.target.id;
     switch (id) {
         case "first":
-            counter = -1;
-            slideLeft()();
+            imageNumber = -1;
+            slideLeft();
             break;
         case "second":
-            counter = 0;
-            slideLeft()();
+            imageNumber = 0;
+            slideLeft();
             break;
         case "third":
-            counter = 1;
-            slideLeft()();
+            imageNumber = 1;
+            slideLeft();
             break;
         case "fourth":
-            counter = 2;
-            slideLeft()();
+            imageNumber = 2;
+            slideLeft();
             break;
         case "fifth":
-            counter = 3;
-            slideLeft()();
+            imageNumber = 3;
+            slideLeft();
             break;
         default:
             break;

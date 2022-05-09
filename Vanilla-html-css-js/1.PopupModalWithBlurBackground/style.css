@@ -15,9 +15,9 @@ body {
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 5px grey;
     border-radius: 1%;
+    display: none;
 }
 .modal-body {
-    /* display: block; */
     font-size: 24px;
 }
 .modal-body p {
@@ -27,10 +27,8 @@ body {
 
 .button {
     position: relative;
-    /* left: 45%; */
     left: 10%;
     top: 10%;
-    /* width: 100px; */
     height: 35px;
     background-color: green;
     border: 0;
