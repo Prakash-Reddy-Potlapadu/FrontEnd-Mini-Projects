@@ -1,7 +1,7 @@
-// window.onload=renderImages()
 
-let images = [],
-    pageNumber=1,PAGE_SIZE = 5;
+let images = [];
+let pageNumber=1;
+let PAGE_SIZE = 5;
 
 const setLoading = (showSpinner) => {
     const spinner = document.getElementById("loadingmask");
@@ -18,8 +18,8 @@ const setLoading = (showSpinner) => {
 };
 
 const renderImages = () => {
-    const container = document.getElementsByClassName("container")[0];
-    const newItems = images.slice(- pageSize);
+    const container = document.getElementById("container");
+    const newItems = images.slice(- PAGE_SIZE);
 
     newItems.forEach((imgSrc) => {
         const img = document.createElement("img");
@@ -41,21 +41,22 @@ const getImages = (pageNo, pageSize) => {
     });
 };
 
-const fetchImages = async () => {
+const fetchImages = async (pageNo,pageSize) => {
     setLoading(true);
-    const items = await getImages(1, PAGE_SIZE);
+    const items = await getImages(1, pageSize);
     setLoading(false);
     images = [...images, ...items];
 
     renderImages();
 };
 
-window.addEventListener("load", fetchImages);
+document.onload=fetchImages()
 
-//*this is important to implment infinite scroll */
+
+//*this is important to implement infinite scroll */
 window.addEventListener("scroll", () => {
     //reference for below formula https://www.educative.io/edpresso/how-to-implement-infinite-scrolling-in-javascript
-    if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 1) {
+    if (window.scrollY + window.innerHeight >= document.body.scrollHeight-1 ) {
         fetchImages(++pageNumber,PAGE_SIZE);
     }
 });
