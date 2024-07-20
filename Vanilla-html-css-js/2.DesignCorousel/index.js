@@ -1,8 +1,9 @@
 let images, interval, imageNumber=1;
+const INTERVAL_DURATION=5000;
 
 window.addEventListener("load", () => {
     images = document.getElementsByClassName("carousel-image");
-    interval = setInterval(slideLeft, 1000); // to change
+    interval = setInterval(slideLeft, INTERVAL_DURATION); // to change
     
 });
 
@@ -74,7 +75,7 @@ document.getElementsByClassName("carousel-container")[0].addEventListener("mouse
     clearInterval(interval);
 });
 document.getElementsByClassName("carousel-container")[0].addEventListener("mouseleave", () => {
-    interval = setInterval(slideLeft, 1000);
+    interval = setInterval(slideLeft, INTERVAL_DURATION);
 });
 
 function handlecarouselIndexClick(event) {
