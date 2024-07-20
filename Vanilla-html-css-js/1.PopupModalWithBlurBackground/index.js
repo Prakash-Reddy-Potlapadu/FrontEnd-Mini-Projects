@@ -7,6 +7,6 @@ function onOpenModalClick() {
 
 function onCloseModalClick() {
     document.getElementById("modal").style.display = "none";
-    document.body.style.backgroundColor = "#ffff";
+    document.body.style.backgroundColor = "#ffffff";
     document.body.style.pointerEvents = "all";
 }

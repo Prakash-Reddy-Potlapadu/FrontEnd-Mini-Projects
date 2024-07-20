@@ -1,28 +1,7 @@
 body {
     font: normal 14px/16px "open sans";
-    position: relative;
     height: 95vh;
     width: 98vw;
-}
-
-.modal {
-    width: 450px;
-    height: 300px;
-    background-color: white;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 5px 5px 5px grey;
-    border-radius: 1%;
-    display: none;
-}
-.modal-body {
-    font-size: 24px;
-}
-.modal-body p {
-    margin-left: 20%;
-    margin-top: 20%;
 }
 
 .button {
@@ -38,6 +17,28 @@ body {
     font-size: 16px;
     padding: 10px;
 }
+
+.modal {
+    width: 450px;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 1%;
+    display: none;
+}
+.modal-body {
+    font-size: 24px;
+}
+.modal-body p {
+    margin-left: 20%;
+    margin-top: 20%;
+}
+
+
 .modal-button {
     background-color: red;
     position: absolute;

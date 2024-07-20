@@ -1,40 +1,36 @@
-body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    height: 100%;
+body{
+    font: normal 14px/16px "open sans";
 }
-
-.todo-section {
+.todo-container {
     position: absolute;
-    left: 35%;
-    top: 20%;
-    /* right: 50%; */
-    transform: translateX(-50%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 50vw;
+    border:1px solid lightgray;
+    padding:20px;
 }
 
-.todo-section .todo-input {
-    border: 1px solid grey;
+.todo-container .todo-input {
+    border: 1px solid gray;
     height: 1.8rem;
-    width: 300%;
+    width: 95%;
     border-radius: 4px;
-    /* width: 200%; */
 }
-.todo-section .add-todo-button {
+.todo-container .todo-add-button {
     height: 1.8rem;
     width: 2rem;
     background: lightblue;
     color: white;
     border-radius: 4px;
-    border: 0;
+    border: none;
     position: absolute;
-    left: 283%;
-    bottom: 6%;
+    right: 5%;
+    bottom: 5%;
     cursor: pointer;
 }
 .todo-list-container {
     margin-top: 2rem;
-    margin: 0;
 }
 .todo-list-container li {
     list-style-type: none;
@@ -42,21 +38,22 @@ body {
     border: 1px solid #dfdfdf;
     margin: 1rem 0;
     border-radius: 4px;
-    width: 300%;
-    /* width: 100%/; */
+    width: 95%;
+    position: relative;
 }
 
 .input-container {
     position: relative;
 }
 
+.todo-container li .action-button-container{
+    position: absolute;
+    cursor: pointer;
+    left: 87%;
+    bottom: 8%;
+}
+
 .todo-list-container li .remove-button {
-    position: absolute;
-    left: 270%;
-    cursor: pointer;
+    margin-left: 5px;
 }
-.todo-list-container li .edit-button {
-    position: absolute;
-    left: 240%;
-    cursor: pointer;
-}
+

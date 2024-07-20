@@ -1,3 +1,5 @@
+// window.onload=renderImages()
+
 let images = [],
     pageNumber=1,PAGE_SIZE = 5;
 

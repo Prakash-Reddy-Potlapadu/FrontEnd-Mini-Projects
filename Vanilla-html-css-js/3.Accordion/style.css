@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,29 +28,30 @@ body {
     cursor: pointer;
 }
 .accordion-container .accordion .accordion-body {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height 0.25s linear;
+    transition: height .25s linear;
 }
 .accordion-container .accordion .accordion-body .section-seperator {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.accordion-container .accordion .accordion-body.expanded {
-    max-height: 100%;
+.accordion-container .accordion.expanded .accordion-body{
+    height: 100%;
 }
-.accordion-body i {
+
+.accordion i::after {
+    content: "+";
+}
+.accordion.expanded i::after {
+    content: "-";
+}
+i {
     position: absolute;
     right: 14px;
     top: 6px;
     font-size: 1.8rem;
     font-weight: bold;
     color: gray;
-}
-.accordion-body i::after {
-    content: "+";
-}
-.accordion-body.expanded i::after {
-    content: "-";
 }

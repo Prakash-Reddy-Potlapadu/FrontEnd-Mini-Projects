@@ -1,12 +1,11 @@
-document.onload = renderToDoList();
+document.onload=renderToDoList()
 
-// document.get;
 
 function handleAddToDoItem(target) {
     const value = document.getElementById("todoinput").value;
     if (value) {
         const todoList = JSON.parse(localStorage.getItem("todoList")) || [];
-        todoList.unshift(value);
+        todoList.push(value);
         localStorage.setItem("todoList", JSON.stringify(todoList));
         renderToDoList();
         document.getElementById("todoinput").value = "";
@@ -23,9 +22,7 @@ function handleEditItem(index) {
         renderToDoList();
     }
 
-    // todoList.splice(index, 1);
-    // localStorage.setItem("todoList", JSON.stringify(todoList));
-    // renderToDoList();
+
 }
 
 function handleDeleteItem(index) {
@@ -37,7 +34,9 @@ function handleDeleteItem(index) {
 
 function renderToDoList() {
     const todoList = JSON.parse(localStorage.getItem("todoList"));
-    const todoListContainer = document.getElementById("todocontainer");
+    const todoListContainer = document.getElementById("todolistcontainer");
+
+    //clear previously rendered items
     while (todoListContainer.firstChild) {
         todoListContainer.removeChild(todoListContainer.firstChild);
     }
@@ -46,15 +45,7 @@ function renderToDoList() {
         const li = document.createElement("li");
         li.innerHTML = todoItem;
 
-        const removeButton = document.createElement("BUTTON");
-        removeButton.innerHTML = "Delete";
-        removeButton.onclick = (e) => {
-            e.stopPropagation();
-            handleDeleteItem(index);
-        };
-        removeButton.classList.add("remove-button");
-
-        const editButton = document.createElement("BUTTON");
+        const editButton = document.createElement("button");
         editButton.innerHTML = "Edit";
         editButton.onclick = (e) => {
             e.stopPropagation();
@@ -62,8 +53,21 @@ function renderToDoList() {
         };
         editButton.classList.add("edit-button");
 
-        li.appendChild(editButton);
-        li.appendChild(removeButton);
+        const removeButton = document.createElement("button");
+        removeButton.innerHTML = "Delete";
+        removeButton.onclick = (e) => {
+            e.stopPropagation();
+            handleDeleteItem(index);
+        };
+        removeButton.classList.add("remove-button");
+
+       const actionButtonContainer=document.createElement('span');
+       actionButtonContainer.classList.add('action-button-container');
+
+        actionButtonContainer.appendChild(editButton);
+        actionButtonContainer.appendChild(removeButton);
+
+        li.appendChild(actionButtonContainer);
         todoListContainer.appendChild(li);
     });
 }
