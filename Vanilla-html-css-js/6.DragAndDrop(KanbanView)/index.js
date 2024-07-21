@@ -3,7 +3,11 @@
 window.addEventListener("load", handleWindowLoad);
 
 let sourceListName = "";
-// let destinationListName = "";
+const listItemNames = {
+    TODO: "todoList",
+    INPROGRESS: "inProgressList",
+    DONE: "doneList",
+};
 
 function handleWindowLoad() {
     renderLists();
@@ -39,24 +43,25 @@ function renderLists() {
     renderDoneList();
 }
 
+
 function handleAddTask() {
     const input = document.getElementById("addtaskinput");
 
-    if (input && input.value) {
+    if (input.value) {
         const todoList = getList(listItemNames.TODO);
         todoList.push(input.value);
+        input.value = "";
         setList(listItemNames.TODO, todoList);
         const container = document.getElementsByClassName("todo-container")[0];
         renderListItem(input.value, container, listItemNames.TODO);
-        input.value = "";
     }
 }
 
 function renderToDoList() {
     const todoList = getList(listItemNames.TODO);
     const container = document.getElementsByClassName("todo-container")[0];
-    while (container.lastChild) {
-        container.removeChild(container.lastChild);
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
     if (todoList && todoList.length) {
         todoList.forEach((item) => {
@@ -91,19 +96,20 @@ function renderDoneList() {
     }
 }
 
+// done
 function renderListItem(itemText, container, listName) {
     const li = document.createElement("li");
     li.innerHTML = itemText;
     li.classList.add("task-item");
     li.setAttribute("id", itemText);
     li.setAttribute("draggable", true);
-    li.addEventListener("dragstart", (e) => handleDragStart(e, listName));
     container.appendChild(li);
+    li.addEventListener("dragstart", (e) => handleDragStart(e, listName));
+
 }
 
 function handleDrop(event, targetListName) {
     event.preventDefault();
-    const destination = event.target;
     destinationListName = targetListName;
     const data = event.dataTransfer.getData("Text");
     const dragItem = document.getElementById(data);
@@ -135,7 +141,6 @@ function handleDrop(event, targetListName) {
             let list = getList(sourceListName);
             list = list.filter((item) => item !== dragItem.innerHTML);
             list.push(dragItem.innerHTML);
-            // destinationList.push(dragItem.innerHTML);
             setList(sourceListName, list);
             renderLists();
         } else {
@@ -158,11 +163,7 @@ function handleDragStart(event, listName) {
     sourceListName = listName;
 }
 
-const listItemNames = {
-    TODO: "todoList",
-    INPROGRESS: "inProgressList",
-    DONE: "doneList",
-};
+
 
 
 
