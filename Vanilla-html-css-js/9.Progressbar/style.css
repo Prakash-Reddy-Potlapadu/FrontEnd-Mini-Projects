@@ -1,0 +1,29 @@
+body{
+        font:"open-sans";
+}
+
+.progressbar-container{
+        width: 25vw;
+        height:3rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 2rem;
+       
+}
+
+#progressbar-label{
+        display: block;
+        text-align: center;
+}
+
+#progressbar{
+        height: 2rem;
+        text-align: center;
+        width: 100%;
+        accent-color: green;
+}
+#progress-percent{
+        position: absolute;
+        right: 46%;
+        top: 50%;
+}
