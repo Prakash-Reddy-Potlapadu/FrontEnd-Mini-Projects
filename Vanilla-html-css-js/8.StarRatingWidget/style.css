@@ -1,0 +1,27 @@
+body{
+        font:sans-serif;
+}
+
+.widget-container{
+        margin-top: 10%;
+        margin-left: 10%;  
+        display: inline-block;
+}
+
+.widget-container .star{
+        font-size: 2rem;
+        cursor: pointer;
+       opacity: .3;
+       
+}
+
+.widget-container .star.selected{
+       opacity: 1;
+}
+
+#rating-msg{
+        margin-top: .5rem;
+        text-align: center;
+        font-weight: 600;
+        color:green
+}
