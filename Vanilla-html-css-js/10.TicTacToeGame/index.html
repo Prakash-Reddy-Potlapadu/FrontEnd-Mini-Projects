@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./index.js" type="text/javascript" defer></script>
+</head>
+<body>
+        <section class="tic-tac-toe-container">
+                <section class="game-actions">
+                        <p id="player-turn"></p>
+                        <button id="reset-game-button" onclick="handleResetGame()">Reset</button>
+                </section>
+        <table class="tic-tac-toe-table">
+                <tbody onclick="handleCellClick(event)">
+                        <tr>
+                                <td class="cell" id="0"></td>
+                                <td class="cell" id="1"></td>
+                                <td class="cell" id="2"></td>
+                        </tr>
+                        <tr>
+                                <td class="cell" id="3"></td>
+                                <td class="cell" id="4"></td>
+                                <td class="cell" id="5"></td>
+                        </tr>
+                        <tr>
+                                <td class="cell" id="6"></td>
+                                <td class="cell" id="7"></td>
+                                <td class="cell" id="8"></td>
+                        </tr>
+                </tbody>
+        </table>
+        </section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+        font-family: "open sans";
+}
+
+.tic-tac-toe-container{
+        margin-left: 50%;
+        transform: translateX(-50%);
+}
+
+.tic-tac-toe-container .game-actions{
+
+        text-align: center;
+}
+
+.tic-tac-toe-table{
+        margin-left: 50%;
+        transform: translateX(-50%);
+        border-collapse: collapse;
+        text-align: center;
+}
+
+.tic-tac-toe-table .cell{
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid gray;
+        background-color: green;
+        color:#ffffff;
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
+}
+
+#player-turn{
+        margin:.5rem 0;
+}
+
+#reset-game-button{
+        margin:.5rem 0;
+        background-color: #335dab;
+        border: 0;
+        color:white;
+        padding:.25rem .5rem;
+        border-radius: 4px;
+        cursor: pointer;
+}
