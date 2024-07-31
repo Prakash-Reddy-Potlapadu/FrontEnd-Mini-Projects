@@ -26,7 +26,7 @@ function didPlayerWin(playerPositions){
                 if(isWinningCombo){
                        console.log("gameStatusElement",playerTurnElement)
                         // gameStatusElement.innerHTML=""
-                        playerTurnElement.innerHTML=`Player <b>${currentPlayer}</b> won!`;
+                        playerTurnElement.innerHTML=`<p style="color:darkorange">Player <b>${currentPlayer}</b> won!</p>`;
                         console.log('playerTurnElement.innerHTML',playerTurnElement.innerHTML);
                         document.getElementsByClassName('tic-tac-toe-table')[0].style.pointerEvents='none';
                         return true;
